@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMS 内容管理系统 · 登录</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #9cddff;
+    --primary-deep: #2f7fb8;
+    --text: #16324a;
+    --muted: #52708a;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    font-family: "思源黑体", "Source Han Sans SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    overflow: hidden;
+    color: var(--text);
+  }
+
+  /* 背景层 - 视频背景 + 淡蓝氛围叠加 */
+  .bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(156, 221, 255, .28) 0%, rgba(156, 221, 255, .06) 45%, rgba(156, 221, 255, .22) 100%);
+  }
+
+  /* 主容器 - 登录框靠右 */
+  .stage {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 2;
+    width: 1440px;
+    height: 100vh;
+    margin-left: -720px;
+    transform-origin: center center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+  }
+
+  /* 左侧品牌区 */
+  .brand {
+    max-width: 520px;
+    animation: rise 1s ease both;
+  }
+  .brand .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .brand .logo .mark {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #6bc0f0, var(--primary));
+    display: grid; place-items: center;
+    box-shadow: 0 8px 26px rgba(156, 221, 255, .5);
+    font-weight: 700; font-size: 24px; color: #fff;
+  }
+  .brand .logo .name {
+    font-size: 24px; font-weight: 600; letter-spacing: 1px;
+  }
+  .brand h1 {
+    margin-bottom: 26px;
+  }
+  .brand h1 .cms {
+    display: block;
+    font-size: 110px;
+    line-height: 1.1;
+    font-family: Arial, "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #ffffff;
+  }
+  .brand h1 .slogan {
+    display: block;
+    width: 520px;
+    font-size: 32px;
+    line-height: 1.3;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 0;
+    letter-spacing: 1px;
+  }
+  .brand .divider {
+    width: 760px;
+    height: 1px;
+    background: rgba(255, 255, 255, .6);
+    margin: 18px 0;
+  }
+  .brand p {
+    color: #ffffff; font-size: 20px; line-height: 1.5;
+  }
+
+  /* 左侧三个并排模块 */
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .tiles {
+    display: flex;
+    gap: 20px;
+  }
+  .tile {
+    position: relative;
+    width: 240px;
+    height: 156px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .32);
+    border: 1px solid rgba(255, 255, 255, .55);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    transition: background .35s ease, border-color .35s ease;
+  }
+  .tile:hover {
+    background: #004e9d;
+    border-color: #004e9d;
+  }
+  .tile .num {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #004e9d;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: Arial, "Helvetica Neue", sans-serif;
+  }
+  .tile:hover .num {
+    background: #ffffff;
+    color: #004e9d;
+  }
+  .tile .txt {
+    position: absolute;
+    left: 12px;
+    right: 16px;
+    bottom: 16px;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  /* 右侧登录框 - 透明磨砂玻璃 + 呼吸感 */
+  .card {
+    position: relative;
+    overflow: hidden;
+    width: 420px;
+    padding: 46px 44px 40px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, .32);
+    border: 1px solid rgba(255, 255, 255, .55);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    animation: breathe 4.5s ease-in-out infinite;
+    transition: transform .4s cubic-bezier(.2, .8, .2, 1);
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(100deg, transparent 0%, rgba(255, 255, 255, .4) 50%, transparent 100%);
+    transform: skewX(-25deg);
+    animation: shine 5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .card:hover {
+    animation: breathe 4.5s ease-in-out infinite, hover-breathe 3s ease-in-out infinite;
+  }
+
+  /* 呼吸感：辉光与边框缓慢脉动 */
+  @keyframes breathe {
+    0%, 100% {
+      box-shadow: 0 20px 60px rgba(156, 221, 255, .25), inset 0 1px 0 rgba(255, 255, 255, .55);
+      border-color: rgba(255, 255, 255, .45);
+    }
+    50% {
+      box-shadow: 0 20px 70px rgba(156, 221, 255, .55), inset 0 1px 0 rgba(255, 255, 255, .75);
+      border-color: rgba(255, 255, 255, .7);
+    }
+  }
+
+  /* 悬浮感：鼠标滑过时呼吸式上下浮动 */
+  @keyframes hover-breathe {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* 光感扫过 */
+  @keyframes shine {
+    0% { left: -120%; }
+    55%, 100% { left: 160%; }
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .card h2 { font-size: 28px; margin-bottom: 6px; }
+  .card .sub { color: var(--muted); font-size: 14px; margin-bottom: 30px; }
+
+  .field { position: relative; margin-bottom: 22px; }
+  .field label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+  .control {
+    display: flex; align-items: center; gap: 12px;
+    background: #ffffff;
+    border: 1px solid rgba(156, 221, 255, .45);
+    border-radius: 12px;
+    padding: 0 16px;
+    transition: border-color .3s, box-shadow .3s, background .3s;
+  }
+  .control svg { flex: none; color: var(--primary-deep); opacity: .7; transition: opacity .3s; }
+  .control input {
+    width: 100%; height: 48px;
+    background: transparent; border: none; outline: none;
+    color: var(--text); font-size: 15px;
+  }
+  .control input::placeholder { color: #8aa3b8; }
+  .control:focus-within {
+    border-color: var(--primary);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(156, 221, 255, .45);
+  }
+  .control:focus-within svg { opacity: 1; }
+
+  .eye {
+    flex: none; cursor: pointer; opacity: .6; transition: opacity .3s;
+    background: none; border: none; color: var(--primary-deep);
+  }
+  .eye:hover { opacity: 1; }
+
+  .row {
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px; color: var(--muted); margin: 4px 0 26px;
+  }
+  .row label { display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
+  .row input[type="checkbox"] {
+    appearance: none; -webkit-appearance: none;
+    width: 16px; height: 16px; flex: none;
+    border: 1.5px solid #cfe7f7;
+    border-radius: 4px;
+    background: #ffffff;
+    cursor: pointer;
+    transition: background .2s, border-color .2s;
+  }
+  .row input[type="checkbox"]:checked {
+    border-color: #009cf7;
+    background: #009cf7 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/13px no-repeat;
+  }
+  .row a { color: var(--primary-deep); text-decoration: none; transition: color .3s; }
+  .row a:hover { color: #16466b; }
+
+  .btn {
+    width: 100%; height: 50px; border: none; border-radius: 12px;
+    background: linear-gradient(135deg, #004e9d, #007bc7);
+    color: #ffffff; font-size: 16px; font-weight: 600; letter-spacing: 2px;
+    cursor: pointer; position: relative; overflow: hidden;
+    transition: transform .25s, box-shadow .35s, filter .3s;
+    box-shadow: 0 10px 26px rgba(156, 221, 255, .55);
+  }
+  .btn::after {
+    content: ""; position: absolute; top: 0; left: -120%;
+    width: 60%; height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .6), transparent);
+    transform: skewX(-20deg);
+    transition: left .6s;
+  }
+  .btn:hover { transform: translateY(-2px); filter: saturate(1.1); box-shadow: 0 16px 34px rgba(156, 221, 255, .7); }
+  .btn:hover::after { left: 130%; }
+  .btn:active { transform: translateY(0) scale(.98); }
+  .btn.loading { pointer-events: none; opacity: .8; }
+
+  .foot { margin-top: 24px; text-align: center; color: var(--muted); font-size: 12px; }
+
+  .shake { animation: shake .4s; }
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+  }
+</style>
+</head>
+<body>
+  <div class="bg">
+    <video class="bg-video" autoplay muted loop playsinline>
+      <source src="bg.mp4" type="video/mp4">
+    </video>
+    <div class="bg-overlay"></div>
+  </div>
+
+  <div class="stage">
+    <div class="left">
+      <section class="brand">
+        <h1>
+          <span class="cms">CMS</span>
+          <span class="slogan">让内容发布更简单</span>
+        </h1>
+        <div class="divider"></div>
+        <p>专注内容，告别繁琐代码<br>内容随心编辑，页面所见即所得</p>
+      </section>
+      <div class="tiles">
+        <div class="tile"><span class="num">1</span><span class="txt">数据可视化工作台，<br>运营状况一目了然。</span></div>
+        <div class="tile"><span class="num">2</span><span class="txt">功能体系完整，<br>覆盖全运营链路。</span></div>
+        <div class="tile"><span class="num">3</span><span class="txt">智能待办提醒，<br>精细化权限管控。</span></div>
+      </div>
+    </div>
+
+    <section class="card" id="card">
+      <h2>CMS站点登录</h2>
+      <div class="sub">欢迎登录CMS内容管理系统</div>
+
+      <div class="field">
+        <label>账号</label>
+        <div class="control">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v4"/><circle cx="12" cy="7" r="4"/></svg>
+          <input id="user" type="text" placeholder="请输入账号" autocomplete="username">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>密码</label>
+        <div class="control">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <input id="pass" type="password" placeholder="请输入密码" autocomplete="current-password">
+          <button class="eye" id="eye" type="button" aria-label="显示密码">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <label><input type="checkbox" checked> 记住我</label>
+        <a href="#">忘记密码？</a>
+      </div>
+
+      <button class="btn" id="btn" type="button">登 录</button>
+      <div class="foot">© 2026 CMS Studio · 版权保留</div>
+    </section>
+  </div>
+
+<script>
+  // 密码可见切换
+  const pass = document.getElementById('pass');
+  const eye = document.getElementById('eye');
+  eye.addEventListener('click', () => {
+    const show = pass.type === 'password';
+    pass.type = show ? 'text' : 'password';
+    eye.style.opacity = show ? '1' : '.6';
+  });
+
+  // 登录按钮交互
+  const btn = document.getElementById('btn');
+  const card = document.getElementById('card');
+  btn.addEventListener('click', () => {
+    const user = document.getElementById('user').value.trim();
+    const pwd = pass.value.trim();
+    if (!user || !pwd) {
+      card.classList.remove('shake');
+      void card.offsetWidth;
+      card.classList.add('shake');
+      return;
+    }
+    btn.classList.add('loading');
+    btn.textContent = '登录中...';
+    setTimeout(() => {
+      btn.textContent = '✓ 登录成功';
+      setTimeout(() => {
+        btn.classList.remove('loading');
+        btn.textContent = '登 录';
+      }, 1200);
+    }, 1400);
+  });
+
+  // 响应式整体缩放：缩放页面时文字与卡片等比缩小，排版不变
+  const stage = document.querySelector('.stage');
+  function fitStage() {
+    const s = Math.min(window.innerWidth / 1440, window.innerHeight / 900, 1);
+    stage.style.transform = 'scale(' + s + ')';
+  }
+  window.addEventListener('resize', fitStage);
+  fitStage();
+</script>
+</body>
+</html>
