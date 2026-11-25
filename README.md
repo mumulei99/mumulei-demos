@@ -1,0 +1,1172 @@
+[你听得懂INFJ吗.html](https://github.com/user-attachments/files/35403081/INFJ.html)
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>留白 · 你听得懂 INFJ 吗 | mumulei</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --ink:#1A1822;
+  --sub:#6F6B7D;
+  --mut:#9C98A8;
+  --faint:#B7B3C2;
+  --line:#E8E4EF;
+  --line-soft:#F0EDF5;
+  --card:#FFFFFF;
+  --lav:#C3B0E4;
+  --lav-deep:#9B84CC;
+  --lav-soft:#E6DDF5;
+  --lav-bg:#F5F1FB;
+  --lime:#D8E97C;
+  --lime-soft:#EDF4C4;
+  --rose:#EFB9B9;
+  --rose-bg:#FBEDED;
+  --sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  --shadow:0 12px 34px -22px rgba(69,48,110,.28),0 2px 8px rgba(69,48,110,.04);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html,body{min-height:100%;}
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  background:
+    radial-gradient(820px 480px at 8% -8%, #F4E9FC 0%, rgba(244,233,252,0) 62%),
+    radial-gradient(760px 440px at 96% 4%, #E9F0FB 0%, rgba(233,240,251,0) 60%),
+    radial-gradient(700px 420px at 62% 104%, #FCF2F6 0%, rgba(252,242,246,0) 60%),
+    #F8F6FB;
+  background-attachment:fixed;
+}
+a{color:inherit;}
+
+/* ===== 水印 ===== */
+.wm-overlay{
+  position:fixed;
+  inset:0;
+  z-index:900;
+  pointer-events:none;
+  user-select:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='170'%3E%3Ctext x='130' y='85' font-family='Helvetica,Arial,sans-serif' font-size='13' fill='%231A1822' fill-opacity='0.062' text-anchor='middle' transform='rotate(-26 130 85)'%3Emumulei%3C/text%3E%3C/svg%3E");
+  background-repeat:repeat;
+}
+.wm-badge{
+  position:fixed;
+  right:16px;bottom:14px;
+  z-index:901;
+  pointer-events:none;
+  user-select:none;
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:10px;letter-spacing:.16em;
+  color:rgba(26,24,34,.34);
+  text-transform:lowercase;
+  padding:5px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.5);
+  border:1px solid rgba(26,24,34,.06);
+  backdrop-filter:blur(4px);
+}
+.wm-badge i{width:4px;height:4px;border-radius:50%;background:rgba(155,132,204,.6);display:block;}
+.byline{
+  font-size:10px;
+  font-weight:400;
+  letter-spacing:.14em;
+  color:var(--faint);
+  margin-left:2px;
+  text-transform:lowercase;
+}
+
+/* ===== 应用外壳 ===== */
+.shell{display:flex;min-height:100vh;}
+
+.side{
+  position:fixed;left:0;top:0;bottom:0;width:86px;
+  display:flex;flex-direction:column;align-items:center;
+  padding:26px 0 22px;
+  gap:26px;
+  z-index:20;
+}
+.side .mark{
+  display:flex;align-items:flex-end;gap:3px;height:26px;
+  margin-bottom:8px;
+}
+.side .mark i{display:block;width:4px;border-radius:3px;background:var(--ink);}
+.side .mark i:nth-child(1){height:20px;}
+.side .mark i:nth-child(2){height:26px;background:var(--ink);}
+.side .mark i:nth-child(3){height:15px;background:var(--lav);}
+.iconbtn{
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--mut);transition:background .2s,color .2s;
+  cursor:pointer;
+}
+.iconbtn:hover{background:rgba(255,255,255,.7);color:var(--ink);}
+.iconbtn.active{
+  width:44px;height:44px;
+  background:var(--ink);color:#fff;
+  box-shadow:0 8px 20px -10px rgba(26,24,34,.5);
+}
+.iconbtn.bottom{margin-top:auto;}
+.iconbtn svg{width:19px;height:19px;stroke-width:1.6;}
+
+.main{
+  flex:1;
+  padding:0 40px 60px 86px;
+  max-width:1180px;
+  margin:0 auto;
+}
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;
+  padding:28px 4px 32px;
+  flex-wrap:wrap;
+}
+.wordmark{
+  display:flex;align-items:center;gap:10px;
+  font-size:19px;font-weight:600;letter-spacing:-.02em;
+}
+.wordmark .dots{display:flex;align-items:flex-end;gap:2.5px;height:22px;}
+.wordmark .dots i{display:block;width:3.5px;border-radius:2px;background:var(--ink);}
+.wordmark .dots i:nth-child(1){height:17px;}
+.wordmark .dots i:nth-child(2){height:22px;}
+.wordmark .dots i:nth-child(3){height:12px;background:var(--lime);}
+.pill{
+  display:inline-flex;align-items:center;gap:9px;
+  height:42px;padding:0 18px;
+  background:rgba(255,255,255,.86);
+  border:1px solid var(--line);
+  border-radius:999px;
+  font-size:13px;color:var(--sub);
+  backdrop-filter:blur(8px);
+}
+.pill .sep{width:1px;height:16px;background:var(--line);}
+.pill b{color:var(--ink);font-weight:500;}
+.dotc{width:7px;height:7px;border-radius:50%;background:var(--lav);}
+.dotc.lime{background:var(--lime);}
+
+/* ===== 通用卡片 ===== */
+.card{
+  background:var(--card);
+  border:1px solid rgba(232,228,239,.9);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+}
+
+/* ===== 视图：开场 ===== */
+#intro{padding-top:8px;}
+.eyebrow{
+  font-size:10.5px;letter-spacing:.28em;color:var(--mut);
+  text-transform:uppercase;margin-bottom:18px;
+  display:flex;align-items:center;gap:10px;
+}
+.eyebrow .tag{color:var(--lav-deep);letter-spacing:.18em;}
+.eyebrow .ln{width:26px;height:1px;background:var(--line);}
+h1{
+  font-weight:600;
+  font-size:clamp(34px,5.4vw,54px);
+  line-height:1.22;
+  letter-spacing:-.025em;
+}
+h1 span{color:var(--mut);font-weight:500;}
+.sub{
+  margin-top:18px;
+  font-size:14.5px;color:var(--sub);line-height:1.95;
+  max-width:34em;
+}
+.sub em{font-style:normal;color:var(--ink);border-bottom:1px solid rgba(155,132,204,.5);padding-bottom:1px;}
+
+.introCard{margin-top:34px;padding:0;overflow:hidden;}
+.tabs{
+  display:flex;gap:6px;
+  padding:14px 16px;
+  border-bottom:1px solid var(--line-soft);
+  background:linear-gradient(180deg,#FCFAFF,#fff);
+}
+.tab{
+  appearance:none;border:none;background:transparent;
+  font-family:var(--sans);font-size:13px;font-weight:500;
+  color:var(--mut);
+  padding:9px 18px;border-radius:999px;cursor:pointer;
+  transition:all .2s;
+}
+.tab:hover{color:var(--ink);}
+.tab.on{
+  background:#fff;color:var(--ink);
+  box-shadow:0 2px 10px -4px rgba(69,48,110,.28);
+}
+.tabs .right{margin-left:auto;display:flex;align-items:center;gap:14px;padding-right:6px;}
+.legend{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--mut);}
+.legend i{width:7px;height:7px;border-radius:50%;display:block;}
+
+.panel{padding:30px 28px 32px;}
+.panel[hidden]{display:none;}
+
+.metaGrid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0;
+  border:1px solid var(--line-soft);
+  border-radius:16px;
+  overflow:hidden;
+  margin-bottom:28px;
+}
+.metaCell{padding:18px 20px;border-right:1px solid var(--line-soft);}
+.metaCell:last-child{border-right:none;}
+.metaCell .k{font-size:10.5px;letter-spacing:.2em;color:var(--faint);text-transform:uppercase;}
+.metaCell .v{font-size:22px;font-weight:600;letter-spacing:-.02em;margin-top:6px;}
+.metaCell .v small{font-size:12px;font-weight:400;color:var(--mut);margin-left:4px;letter-spacing:0;}
+
+.startRow{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.btn{
+  appearance:none;border:1px solid transparent;
+  background:var(--ink);color:#fff;
+  font-family:var(--sans);font-size:14px;font-weight:500;
+  letter-spacing:.02em;
+  padding:13px 26px;border-radius:999px;
+  cursor:pointer;
+  transition:transform .15s,box-shadow .2s,background .2s;
+  box-shadow:0 10px 26px -14px rgba(26,24,34,.6);
+}
+.btn:hover{background:#000;box-shadow:0 14px 30px -14px rgba(26,24,34,.55);}
+.btn:active{transform:translateY(1px);}
+.btn.light{
+  background:#fff;color:var(--ink);
+  border-color:var(--line);
+  box-shadow:none;
+}
+.btn.light:hover{background:#FCFAFF;border-color:#DED4F0;}
+.hint{font-size:12px;color:var(--faint);line-height:1.8;}
+
+/* 等级条 */
+.lbars{display:flex;flex-direction:column;gap:12px;}
+.lrow{display:flex;align-items:center;gap:14px;}
+.lname{flex:0 0 84px;font-size:12.5px;color:var(--sub);letter-spacing:.02em;}
+.ltrack{flex:1;height:32px;border-radius:8px;background:#F4F1F9;overflow:hidden;}
+.lfill{
+  height:100%;border-radius:8px;
+  display:flex;align-items:center;padding:0 12px;
+  font-size:11.5px;font-weight:500;letter-spacing:.04em;
+  transition:width .6s cubic-bezier(.2,.8,.2,1);
+  min-width:56px;
+}
+.lf1{background:var(--lav-soft);color:#5F5578;}
+.lf2{background:#D5C7EE;color:#493D66;}
+.lf3{background:var(--lav);color:#fff;}
+.lf4{background:var(--lime);color:#4A5314;}
+.lrow.on{opacity:1;}
+.lrow.off{opacity:.4;}
+.lbars .cap{font-size:11.5px;color:var(--faint);margin-top:6px;letter-spacing:.04em;}
+
+/* ===== 视图：答题 ===== */
+#quiz{display:none;}
+.quizTop{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:14px;margin-bottom:16px;padding:0 4px;flex-wrap:wrap;
+}
+.stepLabel{font-size:11px;letter-spacing:.22em;color:var(--faint);text-transform:uppercase;}
+.stepLabel b{color:var(--ink);font-weight:600;font-size:13px;letter-spacing:.02em;}
+.scorePill{
+  display:inline-flex;align-items:center;gap:8px;
+  height:34px;padding:0 14px;border-radius:999px;
+  background:#fff;border:1px solid var(--line);
+  font-size:12px;color:var(--sub);
+}
+.scorePill b{color:var(--ink);font-weight:600;font-size:13px;}
+.track{height:3px;border-radius:3px;background:#EBE7F2;overflow:hidden;margin-bottom:22px;}
+.track i{display:block;height:100%;width:0;border-radius:3px;background:linear-gradient(90deg,var(--lav),var(--lav-deep));transition:width .45s cubic-bezier(.3,.9,.3,1);}
+
+.qcard{padding:34px 30px 30px;}
+.qhead{display:flex;align-items:flex-start;gap:12px;margin-bottom:8px;}
+.qtag{
+  font-size:10.5px;letter-spacing:.22em;color:var(--lav-deep);
+  text-transform:uppercase;padding-top:6px;
+}
+.scene{font-size:12px;color:var(--faint);margin-bottom:12px;letter-spacing:.04em;}
+.scene:empty{display:none;}
+.qtext{
+  font-weight:600;
+  font-size:clamp(24px,4.6vw,33px);
+  line-height:1.55;
+  letter-spacing:-.02em;
+  margin-bottom:30px;
+}
+.ask{
+  font-size:11.5px;letter-spacing:.16em;color:var(--faint);
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+.opts{display:flex;flex-direction:column;gap:10px;}
+.opt{
+  display:flex;align-items:center;gap:14px;
+  text-align:left;
+  background:#fff;
+  border:1px solid var(--line);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:14.5px;font-weight:400;line-height:1.65;
+  padding:15px 18px;
+  border-radius:15px;
+  cursor:pointer;
+  transition:all .18s ease;
+}
+.opt:hover{
+  background:#FBF8FF;
+  border-color:#DCD0F1;
+  transform:translateY(-1px);
+  box-shadow:0 8px 22px -18px rgba(69,48,110,.4);
+}
+.opt .k{
+  flex:0 0 26px;width:26px;height:26px;border-radius:50%;
+  background:#F2EEF9;color:var(--mut);
+  font-size:11px;font-weight:600;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .18s;
+}
+.opt.right{background:#F2F8D9;border-color:var(--lime);}
+.opt.right .k{background:var(--lime);color:#3F4A0E;}
+.opt.wrong{background:var(--rose-bg);border-color:var(--rose);}
+.opt.wrong .k{background:var(--rose);color:#7E3535;}
+.opt.dim{opacity:.42;}
+
+.reveal{margin-top:24px;display:none;}
+.reveal.show{display:block;animation:rise .35s ease both;}
+@keyframes rise{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+.verdict{
+  display:flex;align-items:center;gap:9px;
+  font-size:12px;font-weight:500;letter-spacing:.08em;
+  margin-bottom:12px;
+}
+.verdict .dot{width:7px;height:7px;border-radius:50%;background:var(--lime-deep,#9DB33F);}
+.verdict.bad .dot{background:#C97B7B;}
+.verdict .t{color:#5C6B22;}
+.verdict.bad .t{color:#A15A5A;}
+.noteBox{
+  background:var(--lav-bg);
+  border-radius:16px;
+  padding:20px 22px;
+  border:1px solid #EBE3F8;
+}
+.noteBox .lab{
+  font-size:10.5px;letter-spacing:.2em;color:var(--lav-deep);
+  text-transform:uppercase;display:block;margin-bottom:10px;
+}
+.noteBox p{font-size:14px;color:#3F3A52;line-height:1.95;}
+.qfoot{display:flex;justify-content:flex-end;margin-top:22px;}
+
+/* ===== 视图：结果 ===== */
+#result{display:none;}
+.scoreCard{padding:32px 30px;}
+.scoreRow{display:flex;align-items:flex-end;gap:10px;}
+.scoreNum{
+  font-size:clamp(58px,9vw,78px);
+  font-weight:600;line-height:1;letter-spacing:-.04em;
+  color:var(--ink);
+}
+.scoreOf{font-size:12px;color:var(--faint);padding-bottom:10px;letter-spacing:.1em;}
+.scoreNum.ok{color:var(--lav-deep);}
+.levelName{
+  font-size:clamp(19px,3.2vw,25px);
+  font-weight:600;line-height:1.55;letter-spacing:-.015em;
+  margin-top:16px;
+}
+.levelDesc{font-size:14px;color:var(--sub);line-height:2;margin-top:12px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px;}
+.chip{
+  font-size:11.5px;color:var(--sub);
+  background:#F7F4FC;border:1px solid var(--line-soft);
+  padding:7px 13px;border-radius:999px;
+}
+.chip b{color:var(--ink);font-weight:600;}
+
+.gradeCard{margin-top:18px;padding:26px 30px;}
+.gradeCard h3{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);font-weight:500;margin-bottom:18px;}
+
+.reviewCard{margin-top:18px;padding:0;overflow:hidden;}
+.reviewHead{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 26px;border-bottom:1px solid var(--line-soft);
+  cursor:pointer;
+}
+.reviewHead .ttl{font-size:14px;font-weight:500;}
+.reviewHead .chev{font-size:11px;color:var(--mut);transition:transform .25s;}
+.reviewHead.open .chev{transform:rotate(90deg);}
+.reviewBody{display:none;padding:6px 26px 22px;}
+.reviewBody.show{display:block;animation:rise .3s ease both;}
+.ritem{padding:16px 0;border-bottom:1px solid var(--line-soft);}
+.ritem:last-child{border-bottom:none;}
+.rhead{display:flex;align-items:baseline;gap:12px;}
+.rnum{flex:0 0 24px;font-size:11px;color:var(--faint);font-weight:500;}
+.rq{font-size:15px;font-weight:500;line-height:1.6;letter-spacing:-.01em;}
+.rmark{margin-left:auto;flex:0 0 auto;font-size:11px;font-weight:600;}
+.rmark.ok{color:#8CA22F;}
+.rmark.no{color:#C07373;}
+.ra{margin:8px 0 0 36px;font-size:13px;color:var(--sub);line-height:1.9;}
+
+.actRow{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap;}
+
+/* ===== 留言区 ===== */
+.msgCard{margin-top:18px;padding:30px;}
+.msgTtl{
+  font-size:clamp(19px,3.2vw,23px);
+  font-weight:600;letter-spacing:-.015em;line-height:1.6;
+}
+.msgSub{font-size:13px;color:var(--sub);line-height:1.9;margin-top:8px;}
+#msgInput{
+  width:100%;margin-top:20px;min-height:92px;resize:vertical;
+  background:#FAF8FD;
+  border:1px solid var(--line);
+  border-radius:14px;
+  color:var(--ink);
+  font-family:var(--sans);font-size:14px;font-weight:400;line-height:1.9;
+  padding:14px 16px;outline:none;
+  transition:border-color .2s,background .2s;
+}
+#msgInput::placeholder{color:var(--faint);}
+#msgInput:focus{border-color:#D5C7EE;background:#fff;box-shadow:0 0 0 4px rgba(195,176,228,.16);}
+.msgBar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;}
+.counter{font-size:11px;color:var(--faint);letter-spacing:.1em;}
+.msgBar .btn{padding:11px 22px;font-size:13px;box-shadow:none;}
+.noteList{margin-top:26px;display:flex;flex-direction:column;gap:2px;}
+.empty{
+  font-size:12.5px;color:var(--faint);padding:18px 0;letter-spacing:.04em;
+}
+.noteItem{
+  display:flex;gap:12px;
+  padding:16px 0;
+  border-bottom:1px solid var(--line-soft);
+}
+.noteItem:last-child{border-bottom:none;}
+.avatar{
+  flex:0 0 30px;width:30px;height:30px;border-radius:50%;
+  background:var(--lav-soft);color:#5F5578;
+  font-size:12px;font-weight:600;
+  display:flex;align-items:center;justify-content:center;
+}
+.avatar.alt{background:var(--lime-soft);color:#5B651C;}
+.ntxt{font-size:13.5px;color:#3F3A52;line-height:1.9;word-break:break-word;}
+.nmeta{font-size:10.5px;color:var(--faint);margin-top:5px;letter-spacing:.06em;display:flex;align-items:center;gap:10px;}
+.del{
+  background:none;border:none;color:var(--faint);
+  font-size:10.5px;cursor:pointer;font-family:var(--sans);
+  opacity:0;transition:opacity .2s;
+}
+.noteItem:hover .del{opacity:1;}
+.msgFoot{margin-top:16px;font-size:11px;color:var(--faint);line-height:1.9;letter-spacing:.02em;}
+
+/* ===== 页脚 ===== */
+.footNote{
+  margin-top:36px;padding:0 4px;
+  font-size:11.5px;color:var(--faint);line-height:1.9;
+  letter-spacing:.02em;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width:900px){
+  .side{display:none;}
+  .main{padding:0 18px 48px;max-width:none;}
+  .topbar{padding:18px 2px 22px;}
+  .card{border-radius:18px;}
+  .qcard,.scoreCard,.msgCard,.panel{padding:24px 18px;}
+  .metaGrid{grid-template-columns:1fr 1fr;}
+  .metaCell:nth-child(2){border-right:none;}
+  .metaCell:nth-child(3){border-top:1px solid var(--line-soft);border-right:none;grid-column:span 2;}
+  .reviewBody{padding:6px 18px 18px;}
+  .reviewHead{padding:16px 18px;}
+  .lname{flex:0 0 72px;font-size:11.5px;}
+  .opt{font-size:14px;padding:14px 15px;gap:12px;}
+  .qfoot .btn{width:100%;}
+}
+@media (max-width:360px){
+  .metaGrid{grid-template-columns:1fr;}
+  .metaCell{border-right:none;border-top:1px solid var(--line-soft);}
+  .metaCell:first-child{border-top:none;}
+  .metaCell:nth-child(2){border-top:1px solid var(--line-soft);}
+}
+
+@media print{
+  .wm-overlay{background-image:none;}
+  .wm-overlay::after{
+    content:"mumulei";
+    position:fixed;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    font-size:80px;
+    color:rgba(26,24,34,.09);
+    transform:rotate(-26deg);
+  }
+  .side,.topbar,.actRow,#msgInput,.msgBar,.del{display:none !important;}
+}
+</style>
+</head>
+<body>
+
+<!-- 水印层 -->
+<div class="wm-overlay" aria-hidden="true"></div>
+<div class="wm-badge"><i></i>mumulei</div>
+
+<div class="shell">
+  <!-- 左侧图标栏 -->
+  <aside class="side">
+    <div class="mark"><i></i><i></i><i></i></div>
+    <div class="iconbtn" title="首页">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1Z" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="iconbtn" title="题库">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></svg>
+    </div>
+    <div class="iconbtn active" title="我的">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20c1.4-3.3 4-5 7-5s5.6 1.7 7 5" stroke-linecap="round"/></svg>
+    </div>
+    <div class="iconbtn" title="题目列表">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="5" cy="7" r="1.3"/><circle cx="5" cy="12" r="1.3"/><circle cx="5" cy="17" r="1.3"/><path d="M9 7h11M9 12h11M9 17h7" stroke-linecap="round"/></svg>
+    </div>
+    <div class="iconbtn" title="读懂留白">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9L12 17.5l-1.9-5.1L5 10.5l5.1-1.9Z" stroke-linejoin="round"/><path d="M18.5 16l.9 2.4 2.4.9-2.4.9-.9 2.4-2.4-.9Z"/></svg>
+    </div>
+    <div class="iconbtn" title="结果">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 16.5l5-5 4 3.5 7-8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke-linecap="round"/></svg>
+    </div>
+    <div class="iconbtn bottom" title="留言">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7A2.5 2.5 0 0 1 17.5 16H9l-4 4z" stroke-linejoin="round"/></svg>
+    </div>
+  </aside>
+
+  <main class="main">
+    <!-- 顶栏 -->
+    <div class="topbar">
+      <div class="wordmark">
+        <div class="dots"><i></i><i></i><i></i></div>
+        留白
+        <span class="byline">by mumulei</span>
+      </div>
+      <div class="pill">
+        <span class="dotc lime"></span>
+        <span>阅读测试 · INFJ</span>
+        <span class="sep"></span>
+        <b>40 句</b>
+      </div>
+      <div class="pill">
+        <span class="dotc"></span>
+        <span>约 8 分钟</span>
+        <span class="sep"></span>
+        <span>满分 100</span>
+      </div>
+    </div>
+
+    <!-- ===== 视图：开场 ===== -->
+    <section id="intro">
+      <div class="eyebrow">
+        <span class="tag">Reading test</span><span class="ln"></span><span>INFJ · 40</span>
+      </div>
+      <h1>你听得懂<br><span>INFJ 说的话</span></h1>
+      <p class="sub">
+        她说的每一句话都是真的，只是真的那一层藏在<em>字的背面</em>。<br>
+        四十句她真实会说出口的话，每题四种读法，只有一种贴近她心里那层意思。
+      </p>
+
+      <div class="card introCard">
+        <div class="tabs">
+          <button class="tab on" data-tab="test">开始测试</button>
+          <button class="tab" data-tab="level">评分等级</button>
+          <div class="right">
+            <span class="legend"><i style="background:var(--lav)"></i>留白</span>
+            <span class="legend"><i style="background:var(--lime)"></i>潜台词</span>
+          </div>
+        </div>
+
+        <div class="panel" id="panel-test">
+          <div class="metaGrid">
+            <div class="metaCell"><div class="k">Questions</div><div class="v">40<small>道</small></div></div>
+            <div class="metaCell"><div class="k">Time</div><div class="v">8<small>分钟</small></div></div>
+            <div class="metaCell"><div class="k">Score</div><div class="v">100<small>分</small></div></div>
+          </div>
+          <div class="startRow">
+            <button class="btn" id="startBtn">开始测试</button>
+            <span class="hint">每题 2.5 分 · 答完立刻看到她的原意</span>
+          </div>
+        </div>
+
+        <div class="panel" id="panel-level" hidden>
+          <div class="lbars" id="introBars"></div>
+          <div class="cap">分数越高，说明你越能在她说完之前听见那半句没说出口的话。</div>
+        </div>
+      </div>
+
+      <div class="footNote">题目改编自真实对话。答错不代表你不懂人，只代表你习惯听字面。<br>© 2026 mumulei · 留白测试　原创作品，请勿转售或二次分发。</div>
+    </section>
+
+    <!-- ===== 视图：答题 ===== -->
+    <section id="quiz">
+      <div class="quizTop">
+        <div class="stepLabel"><b id="idxLabel">01 / 40</b> &nbsp;·&nbsp; QUESTION</div>
+        <div class="scorePill"><span class="dotc"></span>当前得分 <b id="scoreLabel">0</b></div>
+      </div>
+      <div class="track"><i id="barFill"></i></div>
+
+      <div class="card qcard">
+        <div class="qhead"><span class="qtag">她说的</span></div>
+        <div class="scene" id="scene"></div>
+        <div class="qtext" id="qtext"></div>
+        <div class="ask">她真正想表达的是</div>
+        <div class="opts" id="opts"></div>
+
+        <div class="reveal" id="reveal">
+          <div class="verdict" id="verdict"></div>
+          <div class="noteBox">
+            <span class="lab">她的原意</span>
+            <p id="note"></p>
+          </div>
+        </div>
+
+        <div class="qfoot"><button class="btn" id="nextBtn" style="display:none;">下一题</button></div>
+      </div>
+    </section>
+
+    <!-- ===== 视图：结果 ===== -->
+    <section id="result">
+      <div class="card scoreCard">
+        <div class="scoreRow">
+          <div class="scoreNum" id="scoreNum">0</div>
+          <div class="scoreOf">/ 100</div>
+        </div>
+        <div class="levelName" id="levelName"></div>
+        <div class="levelDesc" id="levelDesc"></div>
+        <div class="chips" id="stats"></div>
+        <div class="actRow"><button class="btn light" id="againBtn">重新测一次</button></div>
+      </div>
+
+      <div class="card gradeCard">
+        <h3>你落在哪一段</h3>
+        <div class="lbars" id="resultBars"></div>
+      </div>
+
+      <div class="card reviewCard">
+        <div class="reviewHead" id="toggleReview">
+          <span class="ttl">逐题回看她的原意</span>
+          <span class="chev">▶</span>
+        </div>
+        <div class="reviewBody" id="reviewBody"><div id="reviewList"></div></div>
+      </div>
+
+      <div class="card msgCard">
+        <div class="msgTtl">读到这里，你想对你的 INFJ 说点什么</div>
+        <div class="msgSub">写给她，写给那个总把真话藏在字背面的人；也可以只是留一句给自己。</div>
+        <textarea id="msgInput" maxlength="120" placeholder="如果此刻只能留一句话……"></textarea>
+        <div class="msgBar">
+          <span class="counter"><span id="msgCount">0</span> / 120</span>
+          <button class="btn" id="msgSend">留下这句话</button>
+        </div>
+        <div class="noteList" id="msgList"></div>
+        <div class="msgFoot">留言保存在这台设备的浏览器里，不上传、不公开；换设备或清除浏览器数据就看不到了。</div>
+      </div>
+
+      <div class="footNote">© 2026 mumulei · 留白测试　本页内容仅供自我觉察与娱乐参考，不构成心理诊断、心理咨询或治疗建议。未经授权请勿转售、二次分发或用于商业培训。</div>
+    </section>
+  </main>
+</div>
+
+<script>
+/* ========== 题库 ========== */
+const QS = [
+{
+  q:"我没事。",
+  o:["她确实没问题，这句话就是全部信息。","她希望你立刻停下来，别再追问。","她在给你台阶，其实在等你说一句「我不信，你说」。","她在轻微埋怨你，等你先道歉。"],
+  a:2,
+  e:"INFJ 的「没事」常常是自我保护能用的最小单位。字面是关门，语气里留了一条缝——她在等你敲门。你若按字面收尾，她不会怪你，只会把门关得再紧一点。"
+},
+{
+  q:"我不想麻烦你。",
+  o:["她在客套，等同于不需要你。","她在确认自己有没有资格占用你的时间。","她在说「别走，挽留我一下」。","她在暗示你从前不够主动。"],
+  a:2,
+  e:"这句话真正的主题是「我不想成为负担」。她说出口之前，往往已经犹豫了很久要不要开口。她把选择权递出去，其实在等你把它收回来。"
+},
+{
+  q:"你怎么想？",
+  o:["她在征求方案，等你给一个结论。","她在测试你和她的立场是否一致。","她在找一句「我懂你」，不是一份方案。","她自己没主意，要你做决定。"],
+  a:2,
+  e:"问句里没有真正的疑问时，INFJ 通常是在要情绪确认。你给她一套分析，她会认真听完、点头，然后觉得自己被绕过去了。"
+},
+{
+  q:"不用送我太贵的东西。",
+  o:["她想确认你在意的不是价格，是她。","她务实，想省钱。","她怕欠人情。","她不在乎收到什么。"],
+  a:0,
+  e:"她不是拒绝礼物，是在给礼物重新定价：值钱的是你有没有想起她。太贵的礼物让她不安，因为那需要回礼，也需要回应。"
+},
+{
+  q:"我们的时代已经落幕了。",
+  o:["她在宣布结束。","她在承认一件事，但没有关门。","她在给关系降温。","她在逼你表态。"],
+  a:1,
+  e:"这是典型的 INFJ 句式：用一句像判决的话，说一个事实，把决定权留白。字面收得很紧，语气上却留着可再议的余地。"
+},
+{
+  q:"你以前不是这样的。",
+  o:["她在挑剔你变了。","她在挑剔，同时也在重新认识你。","她想让你变回从前。","她在抱怨你冷淡。"],
+  a:1,
+  e:"这句话里同时装着两句：一句失落，一句好奇。她真正在说的是「我有点认不出你了，但我不想走」。只听见挑剔，你就会开始辩解。"
+},
+{
+  q:"我为你做了这么多。",
+  o:["她在讨债，要求回报。","她在提条件。","她在指责你自私。","她想被看见，不想被记账。"],
+  a:3,
+  e:"INFJ 几乎不做账。说出这句时，通常是因为长期没被看见，已经到了临界。她要的不是补偿，是一句「我知道」。你一开口算账，她就彻底闭嘴了。"
+},
+{
+  q:"随便你。",
+  o:["她真的无所谓。","她同意你的方案。","她不想吵了。","她已经表达过了、你没接住，所以她退场。"],
+  a:3,
+  e:"「随便你」= 我说过了，你没接住，那我不再说了。表面是让权，实质是一次安静的撤离。"
+},
+{
+  q:"你忙吧。",
+  o:["体贴，允许你去忙。","她在退一步，看你会不会留她。","她在讽刺你。","她不想聊了。"],
+  a:1,
+  e:"这是一次很轻的试探。她说「你忙吧」，你若回「好，那我先忙」，她不会生气，只会把下次开口的门槛抬得再高一点。"
+},
+{
+  q:"我看到你消息了。",
+  o:["她重点在时间，不在消息。","她在解释为什么没回。","她只是通知你。","她在埋怨你。"],
+  a:0,
+  e:"这句话的重量在「我看到」背后的「我等了」。INFJ 习惯用陈述事实来承载情绪，很少直接说「我等了你三个小时」。"
+},
+{
+  q:"我很好，真的。",
+  o:["她状态不错。","她在结束话题。","她想被追问一次，被追问她才敢说真话。","她拒绝沟通。"],
+  a:2,
+  e:"「真的」两个字就是破口。真正好的人不需要加这两个字。她在给你一次机会，看你信不信。"
+},
+{
+  q:"（深夜，她发来一首歌的链接，没有一个字。）",
+  o:["她觉得好听，随手分享给你。","她只是无聊，随手发的。","她在暗示你该睡了。","她说不出的话都在歌里，等你自己听出来。"],
+  a:3,
+  e:"INFJ 的分享几乎都是替代性表达。她不直说，是因为直接说太重。你回一句「好听」，等于告诉她：你没听懂，我也不必再说了。"
+},
+{
+  q:"你不用理解我。",
+  o:["她放弃沟通了。","她真的不需要被理解。","她失望到了某一层，还在等你问一句「我想试着理解」。","她在惩罚你。"],
+  a:2,
+  e:"这是最像关门、其实最像求救的一句。说完这句她会非常难过，因为她刚刚亲手否掉了自己最大的渴望。"
+},
+{
+  q:"我都行，你定。",
+  o:["她配合度高，真的没有偏好。","她在观察你会不会替她想。","她懒得管了。","她嫌你选得慢。"],
+  a:1,
+  e:"INFJ 在关系里常把自己放到第二位，然后把「你有没有替我想到」当成爱的证据。你随手定一个，她配合；但她会记住你有没有问过她。"
+},
+{
+  q:"你直接给我结论就好。",
+  o:["她只要答案。","她要答案，但更在意你推这个结论时有没有把她放进去。","她嫌你啰嗦。","她不想参与决策。"],
+  a:1,
+  e:"她要效率，但被跳过的是过程。INFJ 靠过程确认自己有没有被考虑，一个没有过程的结论，会让她觉得自己不在场。"
+},
+{
+  q:"我们这样挺好的。",
+  o:["她满意现状。","她在拒绝推进。","她在敷衍。","她在说「我不敢想更好」，怕一说就碎了。"],
+  a:3,
+  e:"「挺好的」有时候是给现状封顶。她不是不想要更多，是怕一旦承认想要，就要开始害怕失去。"
+},
+{
+  q:"她删掉了你们共同的朋友。",
+  o:["她想彻底断掉你。","她怕自己从别人那里打听你，忍不住。","她不在乎了。","她的圈子变了。"],
+  a:1,
+  e:"切断关系网络，常常不是为了断你，是为了断自己的手。她删掉的是「能知道你近况的渠道」，因为那个渠道让她失控。"
+},
+{
+  q:"你留着我的联系方式，我很感动。",
+  o:["她在示好。","她在暗示你该主动。","她在给台阶。","感动是真的，里面还藏着一句「那你为什么不找我」。"],
+  a:3,
+  e:"INFJ 的感动里常带着没说出口的部分。她不会直接质问，但那个「为什么」会一直在。你若只回一个「嗯」，她就把这份感动收回去了。"
+},
+{
+  q:"我不会拿孩子的未来开玩笑。",
+  o:["她在拒绝你。","她在告诉你底线，也在替你把责任扛下来。","她在道德绑架。","她在威胁你。"],
+  a:1,
+  e:"这句话表面是在挡你，实质是在承担：她替两个人做了那个更痛的决定，不让你背。听懂的人不会去争辩。"
+},
+{
+  q:"圣诞节我很多年不过了。",
+  o:["她不信这个节。","她懒得过。","她在说「我曾经很认真地过过，后来不敢了」。","她是在提醒你别送礼物。"],
+  a:2,
+  e:"INFJ 常把「不再做某件事」当成伤口的外壳。她说不过节，是在描述一片被冻住的地方，不是在描述一个习惯。"
+},
+{
+  q:"你不用为我觉得愧疚。",
+  o:["她原谅你了。","她不在乎。","她在提前把愧疚挡掉，因为她知道愧疚会把你推远。","她拒绝你的道歉。"],
+  a:2,
+  e:"她比谁都清楚愧疚的副作用：愧疚让人逃。所以她把这条路封了，宁可自己消化。"
+},
+{
+  q:"我只是有点累。",
+  o:["她需要休息。","她想让你帮忙。","她在说「我撑了很久，你能不能看见」。","她在推脱。"],
+  a:2,
+  e:"「只是」是缩小词。INFJ 习惯把自己的消耗降到最低音量再报出来；等到她报出来，往往已经强撑很久了。"
+},
+{
+  q:"你不要多想。",
+  o:["她让你别猜。","她在否定你的感受。","她其实知道你已经多想了，这句是把那个念头按回去。","她在收尾。"],
+  a:2,
+  e:"她说这句的时候，自己也在担心。不是澄清，是共同按住。你若回「我没多想」，对话就到这里结束。"
+},
+{
+  q:"我这个人挺冷漠的。",
+  o:["她在自嘲。","她在提前声明：我的心收起来了，但不是没有。","她在警告你。","她在拒绝靠近。"],
+  a:1,
+  e:"这是自我描述式的预防针。她先把最坏的评价说出口，是怕你先说出来。听懂的人不会反驳，只会继续待着。"
+},
+{
+  q:"随缘吧。",
+  o:["她放弃了。","她真的无所谓。","她怕用力就会失去，所以把力气藏进「随缘」里。","她在给你自由。"],
+  a:2,
+  e:"INFJ 在极想得到、又极怕失去的时候，会用「随缘」降温。这不是放手，是把手缩回去。"
+},
+{
+  q:"你今天话很少。",
+  o:["她在陈述事实。","她在抱怨你冷。","她在说「我在意你有没有话跟我说」。","她在找话题。"],
+  a:2,
+  e:"她会注意到你的沉默，说明她一直在等你的声音。这不是一句观察，是一种很轻的在意。"
+},
+{
+  q:"我看到一个东西，觉得你会喜欢。",
+  o:["她在分享一个物件。","她在暗示你送礼。","她在说「我在人群里会想起你」，这才是重点。","她在寒暄。"],
+  a:2,
+  e:"物件是载体，重点在「想起」。INFJ 用具体的东西承载抽象的惦记，因为直接说「我想你」太暴露。"
+},
+{
+  q:"你变了，变得安静了。",
+  o:["她在怀念从前。","她在批评你。","她在疏远你。","她在说「我在重新认识你，有点陌生，但我不想走」。"],
+  a:3,
+  e:"这是邀请，不是判决。她把「陌生」说出来，是希望你也说说你现在的样子。"
+},
+{
+  q:"那你先睡吧。",
+  o:["她体贴。","她困了。","她想结束关系。","她在关掉今晚，因为再说下去她会说出太多。"],
+  a:3,
+  e:"有些「先睡吧」是撤退。她已经走到一句危险的话前面，自己踩了刹车。"
+},
+{
+  q:"我无话可说。",
+  o:["她没兴趣聊了。","她生气了。","她心里的话太满，语言装不下，她需要有人在旁边坐着。","她在拒绝你。"],
+  a:2,
+  e:"这是全篇最重的一句。它不是空的，是溢出来的。听懂的人不追问，只是留下来。"
+},
+{
+  q:"你不用回我，我知道你忙。",
+  o:["她真的不需要回复。","她在体贴地关上话题。","她给你免了罪，心里却在等一句回复。","她在暗示你不重视她。"],
+  a:2,
+  e:"INFJ 很擅长替对方找好理由，然后自己留在原地。她说「不用回」，是把台阶递给你；你若真的不回，她会把这条台阶也一起收走。"
+},
+{
+  q:"我昨天梦到你了。",
+  o:["她只是随口分享一个梦。","她在暗示你应该更主动。","她想听你问梦见了什么。","她在试探你还愿不愿意听，梦是最安全的借口。"],
+  a:3,
+  e:"梦是她唯一不用负责的开场白。她真正想确认的是「我这样说，你会不会嫌我越界」。你回一个「哦」，她就再也不做梦这个话题了。"
+},
+{
+  q:"你开心就好。",
+  o:["她真心希望你开心。","她把自己的位置让出去了，也悄悄退后了一步。","她在敷衍你。","她在同意你的决定。"],
+  a:1,
+  e:"这句听起来最无害，其实是一次无声的让位。她说「你开心就好」的时候，已经把自己的需要从桌面上撤走了。"
+},
+{
+  q:"钱的事我自己能扛。",
+  o:["她在炫耀自己独立。","她在跟你划清界限。","她能扛是真的，但更想听你说「不用你扛」。","她在暗示你该出钱。"],
+  a:2,
+  e:"INFJ 的独立常常是一种防御：先证明自己不欠任何人，再默默盼着有人说一句「你可以不用这么用力」。"
+},
+{
+  q:"你发消息的时候，我总会先放下手里的事。",
+  o:["她在说「你在我的优先级里排得很前」，也希望自己在你的是。","她在陈述一个习惯。","她在抱怨你不体谅她。","她在暗示你该回报她。"],
+  a:0,
+  e:"这是一句把心意包装成事实的话。她不直接问「我在你心里排第几」，因为那样太暴露，也太容易被敷衍。"
+},
+{
+  q:"你是不是觉得我很麻烦？",
+  o:["她在认真求证。","她在逼你表态。","她在自嘲。","她在要一句否定，而且必须是具体的、有细节的否定。"],
+  a:3,
+  e:"她问的时候，心里已经相信答案可能是「是」。所以一句空泛的「没有啊」救不了她，她需要你举出一件她做过的事，证明她值得。"
+},
+{
+  q:"我说这些没有别的意思。",
+  o:["她真的只是随口一说。","她知道自己在越界，先替你把这个压力挡掉。","她在撇清关系。","她在为自己留后路。"],
+  a:1,
+  e:"越是强调「没有别的意思」，越说明她已经在心里排练过好几遍，怕你读出那层「别的意思」。她把退路铺好，才敢说真话。"
+},
+{
+  q:"以后别对别人这么好。",
+  o:["这是她能说出口的最接近吃醋的话，也是她的示弱。","她在管你。","她在开玩笑。","她在教训你。"],
+  a:0,
+  e:"她不会直接说「我不喜欢你对别人好」，因为那太难堪。于是她把占有欲翻译成一句劝告，等你听出里面那点不舍。"
+},
+{
+  q:"我不想再解释了。",
+  o:["她理亏，说不下去了。","她失去耐心了。","她在说「我已经解释过很多次，你一次都没接住」。","她在结束关系。"],
+  a:2,
+  e:"这是彻底的疲惫，不是愤怒。她放弃的不是这次争论，是「你会不会真的懂我」这件事。"
+},
+{
+  q:"你照顾好自己。",
+  o:["这是客套的收尾。","她只是嘱咐一句。","她在疏远你。","这是最深的一种在意，也是最像告别的一句。"],
+  a:3,
+  e:"INFJ 说这句的时候，常常已经把想说的话全部咽回去了。她关心你，同时判断自己大概不会再有机会亲自照顾你。"
+}
+];
+
+/* ========== 等级定义 ========== */
+const LEVELS = [
+  { name:"字面读者", range:"0–33", w:33, cls:"lf1", min:0,  max:33,
+    desc:"你把她当成一个正常说话的人，而她把情绪藏在了字背面。不怪你——她这种表达，本来就不打算被字面读懂。" },
+  { name:"中间读者", range:"34–57", w:57, cls:"lf2", min:34, max:57,
+    desc:"你能捕捉到她的语气，也偶尔注意到她在拐弯。但一遇到「我没事」「随便你」「你忙吧」这类短句，你还是会顺着字面走。" },
+  { name:"留白阅读者", range:"58–80", w:80, cls:"lf3", min:58, max:80,
+    desc:"你听得懂她的留白，也知道她很多话是在要一个确认。少数几题你仍会读成「她只是在陈述」——那正是她最擅长伪装的地方。" },
+  { name:"读懂了沉默", range:"81–100", w:100, cls:"lf4", min:81, max:100,
+    desc:"你几乎能在她开口之前听见那半句没说出口的话。这很珍贵，也要小心：读得太懂的人，容易被她当成唯一能呼吸的地方。" }
+];
+
+function barsHTML(activeIdx){
+  return LEVELS.map((lv, i) => {
+    const state = (activeIdx === undefined) ? "" : (lv.min <= activeIdx && activeIdx <= lv.max ? " on" : " off");
+    const label = activeIdx === undefined ? (lv.range + " 分") : (lv.min <= activeIdx && activeIdx <= lv.max ? "你在这里 · " + lv.range + " 分" : lv.range + " 分");
+    return '<div class="lrow' + state + '">'
+      + '<span class="lname">' + lv.name + '</span>'
+      + '<div class="ltrack"><div class="lfill ' + lv.cls + '" style="width:' + lv.w + '%">' + label + '</div></div>'
+      + '</div>';
+  }).join('');
+}
+
+/* ========== 状态 ========== */
+const TOTAL = QS.length;
+const PER = 2.5;
+let idx = 0;
+let answers = [];
+let locked = false;
+let curOrder = [0,1,2,3];
+let curCorrect = 0;
+
+const $ = id => document.getElementById(id);
+
+function shuffle(arr){
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function show(view){
+  ["intro","quiz","result"].forEach(v => $(v).style.display = (v === view ? "block" : "none"));
+}
+
+/* ========== 开场 ========== */
+$("introBars").innerHTML = barsHTML();
+
+document.querySelectorAll(".tab").forEach(t => {
+  t.addEventListener("click", () => {
+    document.querySelectorAll(".tab").forEach(x => x.classList.remove("on"));
+    t.classList.add("on");
+    const key = t.dataset.tab;
+    $("panel-test").hidden = (key !== "test");
+    $("panel-level").hidden = (key !== "level");
+  });
+});
+
+/* ========== 答题 ========== */
+function start(){
+  idx = 0; answers = []; locked = false;
+  $("reviewBody").classList.remove("show");
+  $("toggleReview").classList.remove("open");
+  show("quiz");
+  render();
+}
+
+function render(){
+  const item = QS[idx];
+  locked = false;
+
+  $("barFill").style.width = ((idx / TOTAL) * 100) + "%";
+  $("idxLabel").textContent = String(idx + 1).padStart(2,"0") + " / " + TOTAL;
+  $("scoreLabel").textContent = sumScore();
+
+  const isScene = item.q.startsWith("（");
+  $("scene").textContent = isScene ? "情境" : "";
+  $("qtext").textContent = item.q;
+
+  const keys = ["A","B","C","D"];
+  const box = $("opts");
+  box.innerHTML = "";
+  curOrder = shuffle([0,1,2,3]);
+  curCorrect = curOrder.indexOf(item.a);
+  curOrder.forEach((srcIdx, dispIdx) => {
+    const b = document.createElement("button");
+    b.className = "opt";
+    b.innerHTML = '<span class="k">' + keys[dispIdx] + '</span><span>' + item.o[srcIdx] + '</span>';
+    b.addEventListener("click", () => choose(dispIdx));
+    box.appendChild(b);
+  });
+
+  $("reveal").classList.remove("show");
+  $("nextBtn").style.display = "none";
+  $("nextBtn").textContent = (idx === TOTAL - 1) ? "看结果" : "下一题";
+}
+
+function choose(i){
+  if (locked) return;
+  locked = true;
+  const ok = (i === curCorrect);
+  answers.push({ i: idx, ok: ok, picked: i });
+
+  Array.from($("opts").children).forEach((b, j) => {
+    if (j === curCorrect) b.classList.add("right");
+    else if (j === i) b.classList.add("wrong");
+    else b.classList.add("dim");
+    b.style.pointerEvents = "none";
+  });
+
+  const v = $("verdict");
+  v.className = "verdict" + (ok ? "" : " bad");
+  v.innerHTML = '<span class="dot"></span><span class="t">' + (ok ? "读对了" : "读错了") + '</span>';
+
+  $("note").textContent = QS[idx].e;
+  $("reveal").classList.add("show");
+  $("nextBtn").style.display = "inline-block";
+  $("scoreLabel").textContent = sumScore();
+}
+
+function sumScore(){
+  const right = answers.filter(a => a.ok).length;
+  return Math.round(right * PER);
+}
+
+function next(){
+  if (idx === TOTAL - 1){ finish(); return; }
+  idx++;
+  render();
+}
+
+/* ========== 结果 ========== */
+function finish(){
+  const score = sumScore();
+  const right = answers.filter(a => a.ok).length;
+  show("result");
+  window.scrollTo({ top:0, behavior:"smooth" });
+
+  const lv = LEVELS.find(l => score >= l.min && score <= l.max) || LEVELS[0];
+
+  $("scoreNum").textContent = score;
+  $("scoreNum").className = "scoreNum" + (score >= 58 ? " ok" : "");
+  $("levelName").textContent = lv.name + " · " + lv.range + " 分";
+  $("levelDesc").textContent = lv.desc;
+
+  $("stats").innerHTML =
+    '<span class="chip">答对 <b>' + right + '</b> / ' + TOTAL + '</span>' +
+    '<span class="chip">答错 <b>' + (TOTAL - right) + '</b></span>' +
+    '<span class="chip">等级 <b>' + lv.name + '</b></span>';
+
+  $("resultBars").innerHTML = barsHTML(score);
+
+  const list = $("reviewList");
+  list.innerHTML = "";
+  answers.slice().sort((x,y)=>x.i-y.i).forEach(a => {
+    const item = QS[a.i];
+    const div = document.createElement("div");
+    div.className = "ritem";
+    div.innerHTML =
+      '<div class="rhead">' +
+        '<span class="rnum">' + String(a.i + 1).padStart(2,"0") + '</span>' +
+        '<span class="rq">' + item.q + '</span>' +
+        '<span class="rmark ' + (a.ok ? "ok" : "no") + '">' + (a.ok ? "✓" : "✗") + '</span>' +
+      '</div>' +
+      '<div class="ra">' + item.o[item.a] + '</div>';
+    list.appendChild(div);
+  });
+}
+
+/* ========== 留言（本机存储） ========== */
+const NOTE_KEY = "infj40_notes_v1";
+let notes = [];
+
+function loadNotes(){
+  try{
+    const raw = localStorage.getItem(NOTE_KEY);
+    notes = raw ? JSON.parse(raw) : [];
+    if (!Array.isArray(notes)) notes = [];
+  }catch(e){ notes = []; }
+}
+function saveNotes(){
+  try{ localStorage.setItem(NOTE_KEY, JSON.stringify(notes)); }catch(e){}
+}
+function fmtTime(ts){
+  const d = new Date(ts);
+  const p = n => String(n).padStart(2,"0");
+  return (d.getMonth()+1) + "月" + d.getDate() + "日 " + p(d.getHours()) + ":" + p(d.getMinutes());
+}
+function renderNotes(){
+  const box = $("msgList");
+  if (!notes.length){
+    box.innerHTML = '<div class="empty">还没有人留下话。你可以是第一个。</div>';
+    return;
+  }
+  box.innerHTML = notes.map((n, i) => {
+    const ch = (n.t || " ").trim().charAt(0) || "·";
+    return '<div class="noteItem">' +
+      '<div class="avatar' + (i % 2 ? " alt" : "") + '">' + ch + '</div>' +
+      '<div style="flex:1;">' +
+        '<div class="ntxt">' + escapeHTML(n.t) + '</div>' +
+        '<div class="nmeta"><span>' + fmtTime(n.s) + '</span><button class="del" data-del="' + i + '">删除</button></div>' +
+      '</div>' +
+    '</div>';
+  }).join("");
+  box.querySelectorAll("[data-del]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      notes.splice(Number(btn.dataset.del), 1);
+      saveNotes(); renderNotes();
+    });
+  });
+}
+function escapeHTML(s){
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+function addNote(){
+  const txt = $("msgInput").value.trim();
+  if (!txt) { $("msgInput").focus(); return; }
+  notes.unshift({ t: txt, s: Date.now() });
+  saveNotes();
+  $("msgInput").value = "";
+  $("msgCount").textContent = "0";
+  renderNotes();
+}
+
+$("msgInput").addEventListener("input", () => {
+  $("msgCount").textContent = $("msgInput").value.length;
+});
+$("msgSend").addEventListener("click", addNote);
+$("msgInput").addEventListener("keydown", e => {
+  if ((e.metaKey || e.ctrlKey) && e.key === "Enter") addNote();
+});
+
+loadNotes();
+renderNotes();
+
+/* ========== 交互绑定 ========== */
+$("startBtn").addEventListener("click", start);
+$("nextBtn").addEventListener("click", next);
+$("againBtn").addEventListener("click", start);
+$("toggleReview").addEventListener("click", function(){
+  this.classList.toggle("open");
+  $("reviewBody").classList.toggle("show");
+});
+
+document.addEventListener("keydown", function(ev){
+  if ($("quiz").style.display === "block"){
+    if (!locked && ["1","2","3","4"].includes(ev.key)){
+      choose(Number(ev.key) - 1);
+    } else if (locked && (ev.key === "Enter" || ev.key === " ")){
+      ev.preventDefault();
+      next();
+    }
+  }
+});
+</script>
+</body>
+</html>
